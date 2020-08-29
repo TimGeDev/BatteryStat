@@ -7,10 +7,10 @@ module.exports = {
     devServer: {
         proxy: {
             '^/api': {
-                target: 'http://lartify.ddev.site'
+                target: 'http://BatteryStat.ddev.site',
             },
             '^/404': {
-                target: 'http://lartify.ddev.site'
+                target: 'http://BatteryStat.ddev.site',
             }
         }
     },

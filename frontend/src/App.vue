@@ -4,7 +4,7 @@
             <v-toolbar-title class="text-uppercase">
                 <v-btn text to="/" exact depressed class="headline">
                     <v-icon class="mr-1">home</v-icon>
-                    Lartify
+                    BatteryStat
                 </v-btn>
             </v-toolbar-title>
             <v-spacer></v-spacer>
@@ -31,21 +31,23 @@
 
 <script
     lang="ts">
-    import axios from 'axios';
-    import { Component, Vue } from 'vue-property-decorator';
-    @Component({})
-    export default class Lartify extends Vue {
-        private name: string = 'Lartify';
-        private get isAuthenticated() {
-            return this.$store.getters['authModule/isAuthenticated'];
-        }
+import axios from 'axios';
+import { Component, Vue } from 'vue-property-decorator';
 
-        private logout() {
-            axios.post('/api/v1/logout').then(response => {
-                this.$store.dispatch('authModule/setToken', undefined);
-                this.$router.push('login');
-            });
-        }
+@Component({})
+export default class BatteryStat extends Vue {
+  private name: string = 'BatteryStat';
+
+  private get isAuthenticated() {
+    return this.$store.getters['authModule/isAuthenticated'];
+  }
+
+  private logout() {
+    axios.post('/api/v1/logout').then(response => {
+      this.$store.dispatch('authModule/setToken', undefined);
+      this.$router.push('login');
+    });
+  }
 
         public created() {
             if (this.$store.state.authModule.token) {

@@ -5,7 +5,7 @@ import Login from './views/Login.vue';
 import Register from './views/Register.vue';
 import Dashboard from './views/Dashboard.vue';
 import PageNotFound from './views/PageNotFound.vue';
-import store from "@/store/store";
+import store from '@/store/store';
 
 Vue.use(Router);
 
@@ -17,7 +17,7 @@ const router = new Router({
             name: 'home',
             component: Home,
             meta: {
-                auth: true,
+                auth: false,
             },
         },
         {

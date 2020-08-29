@@ -17,6 +17,7 @@ Route::prefix('v1')->group(static function () {
     Route::post('login', 'AuthController@login');
     Route::post('logout', 'AuthController@logout');
     Route::post('register', 'AuthController@register');
+    Route::get('report/{voltage}/{currentCapacity}/{dischargeRate}/{fullChargeCapacity}/{designedMaxCapacity}/{deviceId}', 'ReportController@report');
 
     Route::middleware('auth:api')->group(static function () {
         Route::get('user', 'AuthController@details');

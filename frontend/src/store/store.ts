@@ -1,7 +1,7 @@
 import Vue from 'vue';
-import Vuex, {StoreOptions} from 'vuex';
-import {authModule} from './authModule/index';
-import {RootState} from '@/models/rootState';
+import Vuex, { StoreOptions } from 'vuex';
+import { authModule } from './authModule/index';
+import { RootState } from '@/models/rootState';
 import VuexPersistence from 'vuex-persist';
 
 Vue.use(Vuex);
@@ -10,7 +10,7 @@ const mutationList = [
     'authModule/setToken',
 ];
 const vuexPersist = new VuexPersistence<RootState>({
-    key: 'lartify-vuex',
+    key: 'BatteryStat-vuex',
     storage: window.localStorage,
     modules: ['authModule'],
     filter: (mutation) => {

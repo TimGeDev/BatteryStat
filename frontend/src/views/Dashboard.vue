@@ -1,6 +1,6 @@
 <template>
   <div class="dashboard">
-    Welcome to Lartify
+    Welcome to BatteryStat
   </div>
 </template>
 
